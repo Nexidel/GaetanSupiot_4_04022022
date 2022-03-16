@@ -11,6 +11,12 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const submitBtn = document.getElementById("button-submit")
+
+// Gaétan
+const contentModal = document.querySelector(".modal-body")
+const confirmModal = document.querySelector(".confirm")
+
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -23,6 +29,13 @@ function launchModal() {
 // close modal | Gaétan
 function closeModal() {
   modalbg.style.display = "none";
+}
+
+// launch confirm modal
+function confirmMessage() {
+  contentModal.classList.add("display-none");
+  confirmModal.classList.remove("display-none");
+  submitBtn.value = 'Fermer'
 }
 
 // récupère les élements du form dans des constantes
@@ -58,12 +71,14 @@ function validate() {
   // test prenom
   if (firstName.value.length < 2) {
     dataNotValid(firstName);
+    return false
   } else {
     dataValid(firstName);
   }
   // test nom
   if (lastName.value.length < 2) {
     dataNotValid(lastName);
+    return false
   } else {
     dataValid(lastName);
   }
@@ -72,10 +87,12 @@ function validate() {
     dataValid(email);
   } else {
     dataNotValid(email);
+    return false
   }
   // test date naissance
   if (birthDate.value == "") {
     dataNotValid(birthDate);
+    return false
   } else {
     dataValid(birthDate);
   }
@@ -84,6 +101,7 @@ function validate() {
     dataValid(quantity);
   } else {
     dataNotValid(quantity);
+    return false
   }
 
   // Que 1 radio à été bien choisi
@@ -95,6 +113,7 @@ function validate() {
   }
   if (isChecked == 0) {
     dataNotValid(location1);
+    return false
   } else {
     dataValid(location1);
   }
@@ -104,15 +123,16 @@ function validate() {
     dataValid(conditions);
   } else {
     dataNotValid(conditions);
+    return false
   }
+  return true
 
-  // const error = document.querySelector(".error");
-  // if (error === null) {
-  //   modalConfirm();
-  // }
 }
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   validate();
+  if (validate()==true) {
+    confirmMessage();
+  }
 });

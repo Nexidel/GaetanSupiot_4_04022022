@@ -189,7 +189,26 @@ main {
     overflow: hidden;
     position: relative;
     color: #fff;
-    padding-top: 10px;
+    /* add padding bottom | Gaétan */
+    padding: 10px 0;
+}
+
+.confirm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 50% auto;
+    /* Copy CSS content but without animation */
+    width: 100%;
+    max-width: 500px;
+    background: #232323;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    /* add padding bottom | Gaétan */
+    padding: 10px 0;
 }
 
 .modal-body {
@@ -379,12 +398,6 @@ input[data-error]::after {
     cursor: pointer;
     border: 0;
 }
-
-/* Add space under sumbit button | Gaétan */
-.btn-submit {
-    margin-bottom: 16px;
-}
-
 
 /* custom select styles */
 
@@ -594,6 +607,11 @@ footer {
         margin-top: 50px;
         text-align: center;
     }
+}
+
+/* Add display-none to hide content of the first modal | Gaétan */
+.display-none {
+    display: none;
 }
 
 @keyframes modalopen {
