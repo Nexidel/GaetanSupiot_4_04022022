@@ -12,6 +12,7 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const submitBtn = document.getElementById("button-submit")
+const closeBtn = document.getElementById("button-return")
 
 // Gaétan
 const contentModal = document.querySelector(".modal-body")
@@ -34,8 +35,9 @@ function closeModal() {
 // launch confirm modal
 function confirmMessage() {
   contentModal.classList.add("display-none");
+  submitBtn.classList.add("display-none");
   confirmModal.classList.remove("display-none");
-  submitBtn.value = 'Fermer'
+  closeBtn.classList.remove("display-none");
 }
 
 // récupère les élements du form dans des constantes
