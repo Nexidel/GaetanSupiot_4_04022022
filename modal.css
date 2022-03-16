@@ -380,6 +380,11 @@ input[data-error]::after {
     border: 0;
 }
 
+/* Add space under sumbit button | Gaétan */
+.btn-submit {
+    margin-bottom: 16px;
+}
+
 
 /* custom select styles */
 
