@@ -53,17 +53,6 @@ const dataNotValid = function (element) {
   element.parentElement.setAttribute("data-error-visible", "true");
 };
 
-const ConfirmMessage = () => {
-  const message = document.querySelector(".confirmation");
-  message.style.display = "block";
-
-  setTimeout(() => {
-    modalbg.style.display = "none";
-  }, 4000);
-  setTimeout(() => {
-    message.style.display = "none";
-  }, 3000);
-};
 
 function validate() {
   // test prenom
@@ -97,7 +86,7 @@ function validate() {
     dataNotValid(quantity);
   }
 
-  // vérifie qu'au moins 1 checkbox soit coché
+  // Que 1 radio à été bien choisi
   isChecked = 0;
   for (let i = 0; i < locations.length - 1; i++) {
     if (locations[i].checked) {
@@ -117,10 +106,10 @@ function validate() {
     dataNotValid(conditions);
   }
 
-  const error = document.querySelector(".error");
-  if (error === null) {
-    ConfirmMessage();
-  }
+  // const error = document.querySelector(".error");
+  // if (error === null) {
+  //   modalConfirm();
+  // }
 }
 
 form.addEventListener("submit", (e) => {
