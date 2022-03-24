@@ -55,11 +55,22 @@ img {
 
 .topnav {
     overflow: hidden;
-    margin: 3.5%;
+    /* Add z-index and bg color to appear modal smartphone | Gaétan  */
+    z-index: 2;
+    background-color: #ffffff;
+    padding: 3.5%; /* Change padding to margin for bg white to appear when modal active smartphone | Gaétan  */
 }
 
 .header-logo {
     float: left;
+    padding-left: 30px;
+}
+
+
+@media screen and (max-width: 540px) {
+    .header-logo img {
+        width: 60%; /* Change size only for smartphone | Gaétan */
+    }
 }
 
 .main-navbar {
@@ -78,15 +89,16 @@ img {
     font-family: Roboto, sans-serif;
 }
 
+/* !important to override previous color */
 .topnav a:hover {
     background-color: #ff0000;
-    color: #ffffff;
+    color: #ffffff !important;
     border-radius: 15px;
 }
 
 .topnav a.active {
     background-color: #ff0000;
-    color: #ffffff;
+    color: #ffffff !important;
     border-radius: 15px;
 }
 
@@ -101,6 +113,7 @@ img {
     .topnav a.icon {
         float: right;
         display: block;
+        color: red; /* Add color red | Gaétan */
     }
 }
 
@@ -128,6 +141,7 @@ img {
         float: right;
         display: block;
         margin-top: -15px;
+        font-size: 1.5rem;
     }
 }
 
@@ -215,6 +229,13 @@ main {
     color: #fff;
     /* add padding bottom | Gaétan */
     padding: 10px 0;
+}
+
+/* smartphone modal lower for topnav to appear  */
+@media screen and (max-width: 540px) {
+    .content {
+        margin-top: 75px;
+    }
 }
 
 .confirm {
@@ -625,12 +646,12 @@ footer {
         display: none;
     }
     .hero-headline {
-        font-size: 4.5rem;
+        font-size: 2.5rem; /* Reduce font-size | Gaétan */
         white-space: normal;
     }
     .hero-text {
-        width: unset;
-        font-size: 1.5rem;
+        width: 100%;
+        font-size: .9rem; /* reduce font-size | Gaétan */
     }
     .hero-img img {
         border-radius: 10px;
@@ -655,8 +676,8 @@ footer {
 @-webkit-keyframes modalopen {
     from {
         opacity: 0;
-        -webkit-transform: translateY(-150px);
-                transform: translateY(-150px);
+        -webkit-transform: translateY(-200px);
+                transform: translateY(-200px);
     }
     to {
         opacity: 1;
@@ -666,8 +687,8 @@ footer {
 @keyframes modalopen {
     from {
         opacity: 0;
-        -webkit-transform: translateY(-150px);
-                transform: translateY(-150px);
+        -webkit-transform: translateY(-200px);
+                transform: translateY(-200px);
     }
     to {
         opacity: 1;
