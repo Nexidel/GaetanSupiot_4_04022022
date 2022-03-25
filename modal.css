@@ -55,11 +55,17 @@ img {
 
 .topnav {
     overflow: hidden;
-    /* Add z-index and bg color to appear modal smartphone | Gaétan  */
-    z-index: 2;
-    background-color: #ffffff;
     padding: 3.5%; /* Change padding to margin for bg white to appear when modal active smartphone | Gaétan  */
 }
+
+@media screen and (max-width: 540px){
+    .topnav {
+          /* Add z-index and bg color to appear modal smartphone | Gaétan  */
+    z-index: 2;
+    background-color: #ffffff;
+    }
+}
+
 
 .header-logo {
     float: left;
